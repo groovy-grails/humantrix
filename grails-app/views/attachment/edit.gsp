@@ -27,7 +27,7 @@
 				</g:eachError>
 			</ul>
 			</g:hasErrors>
-			<g:form url="[resource:attachmentInstance, action:'update']" method="PUT" >
+			<g:form enctype='multipart/form-data'   url="[resource:attachmentInstance, action:'update']" method="PUT" >
 				<g:hiddenField name="version" value="${attachmentInstance?.version}" />
 				<fieldset class="form">
 					<g:render template="form"/>

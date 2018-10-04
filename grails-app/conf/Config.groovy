@@ -121,7 +121,6 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'humantrix.SysUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'humantrix.SysUserSysRole'
 grails.plugin.springsecurity.authority.className = 'humantrix.SysRole'
-grails.plugin.springsecurity.authority.className = 'humantrix.SysRole'
 //grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 //	'/':                ['permitAll'],
 //	'/index':           ['permitAll'],

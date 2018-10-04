@@ -3,10 +3,10 @@ dataSource {
     jmxExport = true
     driverClassName = "com.mysql.jdbc.Driver"
     username = "root"
-    password = "123456"
+    password = "a5r2t8"
 //	driverClassName = "org.firebirdsql.jdbc.FBDriver"
 //	username = "SYSDBA"
-//	password = "123456"
+//	password = "a5r2t8"
 }
 hibernate {
     cache.use_second_level_cache = true

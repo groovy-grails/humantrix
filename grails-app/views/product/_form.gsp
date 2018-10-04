@@ -70,7 +70,7 @@
 		<g:message code="product.attachments.label" default="Attachments" />
 		
 	</label>
-	<g:select name="attachments" from="${humantrix.Attachment.list()}" multiple="multiple" optionKey="id" size="5" value="${productInstance?.attachments*.id}" class="many-to-many"/>
+	<g:select name="attachments" from="${humantrix.Attachment.list()}" multiple="multiple" optionKey="id" size="10" value="${productInstance?.attachments*.id}" class="many-to-many"/>
 
 </div>
 
