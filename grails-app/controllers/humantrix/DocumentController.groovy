@@ -16,7 +16,10 @@ class DocumentController {
     }
 
     def show(Document documentInstance) {
+		//println documentInstance?.content
         respond documentInstance
+		//render (view:"show",model: [documentInstance: documentInstance])
+		//render (text: documentInstance?.content, contentType: "text/plain", encoding: "UTF-8")
     }
 
     def create() {

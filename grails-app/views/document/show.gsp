@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="content-label" class="property-label"><g:message code="document.content.label" default="Content" /></span>
 					
-						<span class="property-value" aria-labelledby="content-label"><g:fieldValue bean="${documentInstance}" field="content"/></span>
+						<div class="property-value" aria-labelledby="content-label">${raw(documentInstance?.content)}</div>
 					
 				</li>
 				</g:if>

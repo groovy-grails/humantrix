@@ -7,7 +7,7 @@
 		<g:message code="document.name.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="name" cols="40" rows="5" maxlength="255" required="" value="${documentInstance?.name}"/>
+	<g:textField name="name" maxlength="255" required="" value="${documentInstance?.name}"/>
 
 </div>
 
@@ -16,8 +16,7 @@
 		<g:message code="document.content.label" default="Content" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="content" cols="40" rows="5" maxlength="8000" required="" value="${documentInstance?.content}"/>
-
+	<ckeditor:editor name="content" height="400px" width="100%"> ${documentInstance?.content} </ckeditor:editor>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: documentInstance, field: 'type', 'error')} required">
@@ -34,7 +33,7 @@
 		<g:message code="document.attachments.label" default="Attachments" />
 		
 	</label>
-	<g:select name="attachments" from="${humantrix.Attachment.list()}" multiple="multiple" optionKey="id" size="5" value="${documentInstance?.attachments*.id}" class="many-to-many"/>
+	<g:select name="attachments" from="${humantrix.Attachment.list()}" multiple="multiple" optionKey="id" size="10" value="${documentInstance?.attachments*.id}" class="many-to-many"/>
 
 </div>
 
