@@ -3,11 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>成都上古科技有限公司</title>
+<title>成都人之初科技有限公司</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="成都上古科技有限公司官方网站">
-<meta name="keywords" content="上古，上古科技，成都上古科技，成都上古科技有限公司">
-<meta name="author" content="成都上古科技">
+<meta name="description" content="成都人之初科技有限公司官方网站">
+<meta name="keywords" content="人之初，人之初科技，成都人之初科技，成都人之初科技有限公司">
+<meta name="author" content="成都人之初科技">
 <meta name="robots" content="index,follow">
 <meta name="application-name" content="humantrix.com">
 
@@ -308,7 +308,7 @@
 		<div class="container">
 			<div class="row footer-top">
 				<div class="col-md-6 col-lg-6">
-					<h4>成都上古科技有限公司</h4>
+					<h4>成都人之初科技有限公司</h4>
 					<p>我们一直致力于为广大公司和个人提供最好的产品和最优质的服务！</p>
 				</div>
 				<div class="col-md-6  col-lg-5 col-lg-offset-1">
@@ -316,7 +316,7 @@
 						<div class="col-sm-3">
 							<h4>关于</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">关于我们</a></li>
+								<li><a href="a/?type=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC">关于我们</a></li>
 								<li><a href="#">友情链接</a></li>
 								<li><a href="#">加入我们</a></li>
 							</ul>
