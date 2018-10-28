@@ -43,11 +43,11 @@
 			</div>
 			<div class="navbar-collapse collapse" role="navigation">
 				<ul class="nav navbar-nav">
-					<li class="hidden-sm hidden-md"><a href="#">关于我们</a></li>
+					<li class="hidden-sm hidden-md"><a  class="doc_link_type" href="#">关于我们</a></li>
 					<li><a href="#">产品与服务</a></li>
 					<li><a href="#">定制开发</a></li>
 					<li><a href="#">服务支持</a></li>
-					<li><a href="#">联系我们</a></li>
+					<li><a  class="doc_link_type" href="#">联系我们</a></li>
 				</ul>
 			</div>
 		</div>
@@ -97,9 +97,9 @@
 						<div class="col-sm-3">
 							<h4>关于</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">关于我们</a></li>
-								<li><a href="#">友情链接</a></li>
-								<li><a href="#">加入我们</a></li>
+								<li><a  class="doc_link_type" href="#">关于我们</a></li>
+								<li><a  class="doc_link_type" href="#">友情链接</a></li>
+								<li><a class="doc_link_type"  href="#">加入我们</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-3">
@@ -113,8 +113,8 @@
 						<div class="col-sm-2">
 							<h4>资源</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">帮助</a></li>
-								<li><a href="#">FAQ</a></li>
+								<li><a class="doc_link_type"  href="#">帮助</a></li>
+								<li><a  class="doc_link_type" href="#">FAQ</a></li>
 							</ul>
 						</div>
 					</div>
@@ -135,12 +135,7 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<asset:javascript src="query_1.12.4_jquery.min.js" />
 	<asset:javascript src="bootstrap_3.3.7_js_bootstrap.min.js" />
-
-	<script>
-		$(document).ready(function() {
-
-		});
-	</script>
+	<asset:javascript src="application.js"/>
 
 </body>
 </html>

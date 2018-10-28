@@ -16,9 +16,19 @@ if (typeof jQuery !== 'undefined') {
 		}).ajaxStop(function() {
 			$(this).fadeOut();
 		});
+		
+		//sunjh add at 20181028
+		function changeDocLink(){
+			$(".doc_link_type").each(function(index){
+				$( this ).attr("href","a/?type="+encodeURIComponent($( this ).text().trim()));
+			});
+		}
 		//sunjh add at 2018909
 		$(document).ready(function(){
 			$(".nav .home").attr("href",$(".nav .home").attr("href")+"admin");
+			changeDocLink();
 		});
+		
+		
 	})(jQuery);
 }

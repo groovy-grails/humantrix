@@ -1,3 +1,4 @@
+<%@ page import="humantrix.*" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -19,7 +20,7 @@
 <asset:stylesheet src="angular-ui-notification-d587e5c405.min.css" />
 <asset:stylesheet src="fangular-ui-switch-fc63192144.min.css" />
 <asset:stylesheet src="style-9501811805.min.css" />
-
+<asset:stylesheet src="web.css" />
 
 <!-- Favicons -->
 <link rel="apple-touch-icon-precomposed"
@@ -43,11 +44,11 @@
 			</div>
 			<div class="navbar-collapse collapse" role="navigation">
 				<ul class="nav navbar-nav">
-					<li class="hidden-sm hidden-md"><a href="#">关于我们</a></li>
+					<li class="hidden-sm hidden-md"><a class="doc_link_type" href="#">关于我们</a></li>
 					<li><a href="#">产品与服务</a></li>
 					<li><a href="#">定制开发</a></li>
 					<li><a href="#">服务支持</a></li>
-					<li><a href="#">联系我们</a></li>
+					<li><a class="doc_link_type"  href="#">联系我们</a></li>
 				</ul>
 			</div>
 		</div>
@@ -56,250 +57,27 @@
 	<div class="container projects">
 		<div class="container">
 			<div class="row bundle-container">
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>Start</h3>
-							<lead>1-XS</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> x86-64 core</span>
-						</div>
-						<div class="specs">
-							<span><strong>1&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>25&nbsp;GB</strong> NVMe SSD disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>100&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€1.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a
-								href="https://www.scaleway.com/virtual-cloud-servers/#anchor_starter"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
+			<g:each in="${Product.findAllByIfShow(true)}" status="i" var="productInstance">
 				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
 					<div class="bundle-wrapper">
 						<div class="top">
-							<h3>Pro</h3>
-							<lead>X64-15GB</lead>
-							<hr>
+							<h3>${fieldValue(bean: productInstance, field: "name")}</h3>
 						</div>
 						<div class="specs">
-							<span><strong>6</strong> x86-64 cores</span>
+							<img width="238" height="180" src="http://humantrix.com/i/${productInstance.attachments[0].name}">
 						</div>
 						<div class="specs">
-							<span><strong>15&nbsp;GB</strong> memory</span>
+							<div class="product_detail">${fieldValue(bean: productInstance, field: "detail")}</div>
 						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;GB</strong> SSD disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>250&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
+						
 						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€24.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a
-								href="https://www.scaleway.com/virtual-cloud-servers/#anchor_pro"
-								class="btn btn-lg btn-default">Discover</a>
+							<h4 class="bundle-pricing-big-title">&yen;${fieldValue(bean: productInstance, field: "price")}</h4>
+							<p class="bundle-pricing-unit">${fieldValue(bean: productInstance, field: "priceType")}</p>
+							<a href="#" class="btn btn-lg btn-default">购买</a>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>Arm</h3>
-							<lead>ARM64-2GB</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>4</strong> ARMv8 cores</span>
-						</div>
-						<div class="specs">
-							<span><strong>2&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>50&nbsp;GB</strong> SSD disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€2.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a
-								href="https://www.scaleway.com/virtual-cloud-servers/#anchor_arm"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>BareMetal</h3>
-							<lead>C1</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>4</strong> dedicated cores</span>
-						</div>
-						<div class="specs">
-							<span><strong>2&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>50&nbsp;GB</strong> SSD Disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€2.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a href="https://www.scaleway.com/baremetal-cloud-servers"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>BareMetal</h3>
-							<lead>C1</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>4</strong> dedicated cores</span>
-						</div>
-						<div class="specs">
-							<span><strong>2&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>50&nbsp;GB</strong> SSD Disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€2.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a href="https://www.scaleway.com/baremetal-cloud-servers"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>BareMetal</h3>
-							<lead>C1</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>4</strong> dedicated cores</span>
-						</div>
-						<div class="specs">
-							<span><strong>2&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>50&nbsp;GB</strong> SSD Disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€2.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a href="https://www.scaleway.com/baremetal-cloud-servers"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>BareMetal</h3>
-							<lead>C1</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>4</strong> dedicated cores</span>
-						</div>
-						<div class="specs">
-							<span><strong>2&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>50&nbsp;GB</strong> SSD Disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€2.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a href="https://www.scaleway.com/baremetal-cloud-servers"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3 col-sm-6 col-xs-12 bundle bundle-pricing">
-					<div class="bundle-wrapper">
-						<div class="top">
-							<h3>BareMetal</h3>
-							<lead>C1</lead>
-							<hr>
-						</div>
-						<div class="specs">
-							<span><strong>4</strong> dedicated cores</span>
-						</div>
-						<div class="specs">
-							<span><strong>2&nbsp;GB</strong> memory</span>
-						</div>
-						<div class="specs">
-							<span><strong>50&nbsp;GB</strong> SSD Disk</span>
-						</div>
-						<div class="specs">
-							<span><strong>1</strong> flexible public IPv4</span>
-						</div>
-						<div class="specs">
-							<span><strong>200&nbsp;Mbit/s</strong> unmetered bandwidth</span>
-						</div>
-						<div class="pricing">
-							<h4 class="bundle-pricing-big-title">€2.99</h4>
-							<p class="bundle-pricing-unit">per month</p>
-							<a href="https://www.scaleway.com/baremetal-cloud-servers"
-								class="btn btn-lg btn-default">Discover</a>
-						</div>
-					</div>
-				</div>
+				</g:each>
 			</div>
 		</div>
 	</div>
@@ -316,9 +94,9 @@
 						<div class="col-sm-3">
 							<h4>关于</h4>
 							<ul class="list-unstyled">
-								<li><a href="a/?type=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC">关于我们</a></li>
-								<li><a href="#">友情链接</a></li>
-								<li><a href="#">加入我们</a></li>
+								<li><a  class="doc_link_type" href="a/?type=%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC">关于我们</a></li>
+								<li><a class="doc_link_type"  href="#">友情链接</a></li>
+								<li><a  class="doc_link_type" href="#">加入我们</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-3">
@@ -332,8 +110,8 @@
 						<div class="col-sm-2">
 							<h4>资源</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">帮助</a></li>
-								<li><a href="#">FAQ</a></li>
+								<li><a  class="doc_link_type" href="#">帮助</a></li>
+								<li><a  class="doc_link_type" href="#">FAQ</a></li>
 							</ul>
 						</div>
 					</div>
@@ -354,12 +132,7 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<asset:javascript src="query_1.12.4_jquery.min.js" />
 	<asset:javascript src="bootstrap_3.3.7_js_bootstrap.min.js" />
-
-	<script>
-		$(document).ready(function() {
-
-		});
-	</script>
+	<asset:javascript src="application.js"/>
 
 </body>
 </html>
